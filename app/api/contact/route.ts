@@ -2,8 +2,6 @@ import { NextRequest } from "next/server";
 import { contactSchema } from "@/types/contact";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 // Simple in-memory rate limiter: max 5 per IP per hour
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 
@@ -49,6 +47,7 @@ export async function POST(request: NextRequest) {
 
   const { name, email, phone, company, service, message } = parsed.data;
 
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const toEmail = process.env.CONTACT_TO_EMAIL || "info@limitlesssolutions.co.ke";
   const fromEmail = process.env.CONTACT_FROM_EMAIL || "website@limitlesssolutions.co.ke";
 
