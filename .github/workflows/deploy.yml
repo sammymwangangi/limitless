@@ -15,4 +15,4 @@ jobs:
           host: ${{ secrets.DROPLET_IP }}
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: /opt/limitless-solutions/deploy.sh
+          script: bash /opt/limitless-solutions/deploy.sh
