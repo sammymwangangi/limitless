@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "20+", label: "Projects delivered" },
+  { value: "200+", label: "Projects delivered" },
   { value: "5+", label: "Industries served" },
-  { value: "3", label: "Countries with clients" },
+  { value: "6", label: "Countries with clients" },
   { value: "100%", label: "Client retention rate" },
 ];
 
