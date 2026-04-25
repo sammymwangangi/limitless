@@ -16,13 +16,13 @@ const contactLinks = [
   },
   {
     label: "WhatsApp",
-    value: "+254 712 345 678",
-    href: "https://wa.me/254712345678",
+    value: "+254 798 489 573",
+    href: "https://wa.me/254798489573",
   },
   {
     label: "Call us",
-    value: "+254 712 345 678",
-    href: "tel:+254712345678",
+    value: "+254 798 489 573",
+    href: "tel:+254798489573",
   },
 ];
 
