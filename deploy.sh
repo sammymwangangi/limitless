@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+cd /opt/limitless-solutions
+
 echo "==> Pulling latest changes..."
 git pull origin main
 
