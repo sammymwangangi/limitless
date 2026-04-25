@@ -1,0 +1,18 @@
+name: Deploy to DigitalOcean
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.DROPLET_IP }}
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: /opt/limitless-solutions/deploy.sh

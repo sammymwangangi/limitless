@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  nextjs_app:
+    image: limitless-solutions:latest
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SITE_URL: https://limitlesssolutions.co.ke
+    restart: unless-stopped
+    environment:
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - CONTACT_TO_EMAIL=${CONTACT_TO_EMAIL}
+      - CONTACT_FROM_EMAIL=${CONTACT_FROM_EMAIL}
+      - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL}
+    expose:
+      - "3000"
+    networks:
+      - web
+
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - /var/www/certbot:/var/www/certbot:ro
+    depends_on:
+      - nextjs_app
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge
