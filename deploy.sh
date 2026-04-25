@@ -4,7 +4,7 @@ set -e
 cd /opt/limitless-solutions
 
 echo "==> Pulling latest changes..."
-git pull origin main
+/usr/bin/git pull origin main
 
 echo "==> Building and restarting containers..."
 docker compose up -d --build
