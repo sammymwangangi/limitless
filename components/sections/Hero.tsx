@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -9,7 +10,6 @@ export default function Hero() {
       className="min-h-screen flex flex-col justify-end relative overflow-hidden"
       style={{ background: "var(--surface)" }}
     >
-      {/* Decorative ambient tech glow */}
       <div
         className="absolute pointer-events-none rounded-full"
         style={{
@@ -36,64 +36,75 @@ export default function Hero() {
       />
 
       <div className="relative z-10 max-w-6xl mx-auto w-full px-6 sm:px-10 pb-20 pt-32">
-        {/* Eyebrow */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="section-tag mb-6"
         >
-          Nairobi, Kenya &mdash; Serving clients globally
+          Nairobi, Kenya &mdash; Serving Africa and global clients
         </motion.p>
 
-        {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.2 }}
-          className="font-display font-extrabold mb-10"
+          className="font-display font-extrabold mb-8"
           style={{
-            fontSize: "clamp(3rem, 7vw, 6.5rem)",
+            fontSize: "clamp(3rem, 7vw, 6.25rem)",
             lineHeight: 0.95,
-            letterSpacing: "-0.03em",
-            maxWidth: "900px",
+            letterSpacing: "-0.035em",
+            maxWidth: "1000px",
             color: "var(--ink)",
           }}
         >
-          Software
+          We build systems
           <br />
-          built to{" "}
-          <span className="gradient-text font-extrabold not-italic">scale.</span>
+          that <span className="gradient-text">grow your business.</span>
         </motion.h1>
 
-        {/* Bottom row */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8"
+          className="grid lg:grid-cols-[1fr_auto] gap-10 lg:items-end"
         >
-          <p
-            className="text-base font-light leading-relaxed"
-            style={{ maxWidth: "420px", color: "var(--ink-muted)" }}
-          >
-            We design, build, and integrate software systems that power real
-            businesses — from e-commerce platforms and ISP billing to AI
-            automation and payment integrations. Delivered with precision, on
-            time.
-          </p>
-          <div className="flex gap-3 flex-shrink-0">
-            <a href="#services" className="btn-primary">
-              Explore services
+          <div>
+            <p
+              className="text-lg font-light leading-relaxed mb-5"
+              style={{ maxWidth: "650px", color: "var(--ink-muted)" }}
+            >
+              Websites, AI automation, M-PESA integrations and custom software
+              designed to help ambitious businesses win more customers, remove
+              manual work and operate with better visibility.
+            </p>
+            <div className="flex flex-wrap gap-3 text-sm" style={{ color: "var(--ink-muted)" }}>
+              <span>Get Customers.</span>
+              <span aria-hidden="true">•</span>
+              <span>Automate Operations.</span>
+              <span aria-hidden="true">•</span>
+              <span>Build Software.</span>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a href="#contact" className="btn-primary gap-2">
+              Get a free technology assessment
+              <ArrowRight className="w-4 h-4" />
             </a>
-            <a href="#contact" className="btn-ghost">
-              Let&rsquo;s talk
+            <a
+              href="https://wa.me/254798489573?text=Hi%20Limitless%20Softwares%2C%20I%27d%20like%20to%20discuss%20a%20technology%20project."
+              target="_blank"
+              rel="noreferrer"
+              className="btn-ghost gap-2"
+            >
+              <MessageCircle className="w-4 h-4" />
+              WhatsApp us
             </a>
           </div>
         </motion.div>
       </div>
 
-      {/* Bottom divider */}
       <div
         className="absolute bottom-0 left-0 right-0 h-px"
         style={{ background: "var(--border)" }}
