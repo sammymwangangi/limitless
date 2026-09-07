@@ -29,7 +29,7 @@ export default function Footer() {
             <a
               href="/"
               aria-label="Limitless Softwares home"
-              className="inline-flex items-center gap-2.5 font-display font-bold text-sm no-underline transition-opacity hover:opacity-90 mb-3"
+              className="inline-flex min-h-8 items-center gap-2.5 font-display font-bold text-sm no-underline transition-opacity hover:opacity-90 mb-3"
               style={{ color: "#ffffff" }}
             >
               <Logo size={22} />
@@ -38,7 +38,7 @@ export default function Footer() {
             <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.74)" }}>
               Limitless Software Solutions · Nairobi, Kenya · BRS BN-AYSMPR9Y
             </p>
-            <a href="mailto:info@limitlesssolutions.co.ke" className="text-sm underline underline-offset-4" style={{ color: "#7DD3FC" }}>
+            <a href="mailto:info@limitlesssolutions.co.ke" className="inline-flex min-h-8 items-center text-sm underline underline-offset-4" style={{ color: "#7DD3FC" }}>
               info@limitlesssolutions.co.ke
             </a>
           </div>
@@ -48,7 +48,7 @@ export default function Footer() {
               <p className="text-xs font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "rgba(255,255,255,0.82)" }}>Explore</p>
               <div className="flex flex-wrap gap-x-5 gap-y-3 max-w-md">
                 {primaryLinks.map((link) => (
-                  <a key={link.href} href={link.href} className="footer-nav-link text-sm no-underline transition-colors">
+                  <a key={link.href} href={link.href} className="footer-nav-link inline-flex min-h-8 items-center text-sm no-underline transition-colors">
                     {link.label}
                   </a>
                 ))}
@@ -59,7 +59,7 @@ export default function Footer() {
               <p className="text-xs font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "rgba(255,255,255,0.82)" }}>Legal</p>
               <div className="flex flex-wrap gap-x-5 gap-y-3">
                 {legalLinks.map((link) => (
-                  <a key={link.href} href={link.href} className="footer-nav-link text-sm no-underline transition-colors">
+                  <a key={link.href} href={link.href} className="footer-nav-link inline-flex min-h-8 items-center text-sm no-underline transition-colors">
                     {link.label}
                   </a>
                 ))}
