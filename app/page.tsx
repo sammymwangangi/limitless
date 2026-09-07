@@ -3,9 +3,12 @@ import Footer from "@/components/layout/Footer";
 import Marquee from "@/components/Marquee";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
-import Services from "@/components/sections/Services";
-import Technologies from "@/components/sections/Technologies";
+import CommercialPillars from "@/components/sections/CommercialPillars";
+import Pricing from "@/components/sections/Pricing";
+import AutomationFlow from "@/components/sections/AutomationFlow";
+import Industries from "@/components/sections/Industries";
 import Process from "@/components/sections/Process";
+import Technologies from "@/components/sections/Technologies";
 import Contact from "@/components/sections/Contact";
 
 export default function Home() {
@@ -16,7 +19,10 @@ export default function Home() {
         <Hero />
         <Marquee />
         <About />
-        <Services />
+        <CommercialPillars />
+        <Pricing />
+        <AutomationFlow />
+        <Industries />
         <Process />
         <Technologies />
         <Contact />
