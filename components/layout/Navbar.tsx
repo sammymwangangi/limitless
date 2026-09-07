@@ -6,10 +6,11 @@ import ThemeToggle from "@/components/ThemeToggle";
 import Logo from "@/components/Logo";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
+  { label: "Solutions", href: "#solutions" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Automation", href: "#automation" },
+  { label: "Industries", href: "#industries" },
   { label: "Process", href: "#process" },
-  { label: "Tech", href: "#technologies" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -55,110 +56,76 @@ export default function Navbar() {
           : { background: "transparent" }
       }
     >
-      <div
-        className="transition-all duration-300"
-        style={
-          scrolled
-            ? { borderBottom: "0.5px solid var(--border)" }
-            : {}
-        }
-      >
-        <div className="max-w-6xl mx-auto px-6 sm:px-10">
-          <div className="flex items-center justify-between h-16 lg:h-[72px]">
-            {/* Logo */}
-            <a
-              href="#top"
-              className="flex items-center gap-2.5 font-display font-bold text-[0.95rem] no-underline group"
-              style={{ color: "var(--ink)" }}
-            >
-              <Logo size={28} className="transition-transform group-hover:scale-105" />
-              <span>Limitless Software Solutions</span>
-            </a>
+      <div className="max-w-6xl mx-auto px-6 sm:px-10">
+        <div className="flex items-center justify-between h-16 lg:h-[72px]">
+          <a
+            href="#top"
+            className="flex items-center gap-2.5 font-display font-bold text-[0.95rem] no-underline group"
+            style={{ color: "var(--ink)" }}
+          >
+            <Logo size={28} className="transition-transform group-hover:scale-105" />
+            <span>Limitless Softwares</span>
+          </a>
 
-            {/* Desktop nav */}
-            <div className="hidden lg:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="px-3.5 py-1.5 rounded-lg text-sm transition-colors no-underline"
-                  style={{
-                    fontWeight: 400,
-                    color:
-                      activeSection === link.href.slice(1)
-                        ? "var(--ink)"
-                        : "var(--ink-muted)",
-                  }}
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-
-            {/* Right side */}
-            <div className="hidden lg:flex items-center gap-3">
-              <ThemeToggle />
+          <div className="hidden xl:flex items-center gap-1">
+            {navLinks.map((link) => (
               <a
-                href="#contact"
-                className="btn-primary text-sm"
-                style={{ padding: "0.5rem 1.25rem" }}
+                key={link.href}
+                href={link.href}
+                className="px-3 py-1.5 rounded-lg text-sm transition-colors no-underline"
+                style={{
+                  color:
+                    activeSection === link.href.slice(1)
+                      ? "var(--ink)"
+                      : "var(--ink-muted)",
+                }}
               >
-                Get in touch
+                {link.label}
               </a>
-            </div>
+            ))}
+          </div>
 
-            {/* Mobile toggle */}
-            <div className="lg:hidden flex items-center gap-2">
-              <ThemeToggle />
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                aria-label="Toggle menu"
-                className="p-2 rounded-lg transition-colors"
-                style={{ color: "var(--ink-muted)" }}
-              >
-                {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-              </button>
-            </div>
+          <div className="hidden xl:flex items-center gap-3">
+            <ThemeToggle />
+            <a href="#contact" className="btn-primary text-sm" style={{ padding: "0.5rem 1.25rem" }}>
+              Free assessment
+            </a>
+          </div>
+
+          <div className="xl:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+              className="p-2 rounded-lg transition-colors"
+              style={{ color: "var(--ink-muted)" }}
+            >
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
         </div>
-
-        {/* Mobile menu */}
-        {isOpen && (
-          <div
-            style={{
-              background: "var(--surface)",
-              borderBottom: "0.5px solid var(--border)",
-            }}
-          >
-            <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="px-4 py-3 rounded-lg text-sm no-underline transition-colors"
-                  style={{
-                    fontWeight: 400,
-                    color:
-                      activeSection === link.href.slice(1)
-                        ? "var(--accent)"
-                        : "var(--ink-muted)",
-                  }}
-                >
-                  {link.label}
-                </a>
-              ))}
-              <a
-                href="#contact"
-                onClick={() => setIsOpen(false)}
-                className="btn-primary mt-2 text-center text-sm"
-              >
-                Get in touch
-              </a>
-            </div>
-          </div>
-        )}
       </div>
+
+      {isOpen && (
+        <div style={{ background: "var(--surface)", borderBottom: "0.5px solid var(--border)" }}>
+          <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="px-4 py-3 rounded-lg text-sm no-underline transition-colors"
+                style={{ color: "var(--ink-muted)" }}
+              >
+                {link.label}
+              </a>
+            ))}
+            <a href="#contact" onClick={() => setIsOpen(false)} className="btn-primary mt-2 text-center text-sm">
+              Get a free assessment
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
