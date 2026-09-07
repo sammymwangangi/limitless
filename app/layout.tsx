@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Syne, DM_Sans } from "next/font/google";
+import AccessibilityProvider from "@/components/AccessibilityProvider";
 import "./globals.css";
 
 const syne = Syne({
@@ -125,7 +126,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+        <AccessibilityProvider>{children}</AccessibilityProvider>
+      </body>
     </html>
   );
 }
