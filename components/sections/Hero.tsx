@@ -88,7 +88,7 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3">
-            <a href="#contact" className="btn-primary gap-2">
+            <a href="/assessment" className="btn-primary gap-2">
               Get a free technology assessment
               <ArrowRight className="w-4 h-4" />
             </a>
