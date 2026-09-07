@@ -47,7 +47,7 @@ export default async function IndustryPage({
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="pt-36 pb-20" style={{ background: "var(--surface)" }}>
           <div className="max-w-6xl mx-auto px-6 sm:px-10">
             <div className="max-w-4xl">
@@ -70,7 +70,7 @@ export default async function IndustryPage({
                 <Link href="/assessment" className="btn-primary">
                   Assess my workflow
                 </Link>
-                <Link href="/#pricing" className="btn-ghost">
+                <Link href="/pricing" className="btn-ghost">
                   View starting prices
                 </Link>
               </div>
@@ -87,7 +87,7 @@ export default async function IndustryPage({
               </h2>
               <div className="space-y-3">
                 {industry.problems.map((problem) => (
-                  <div key={problem} className="p-5 rounded-[14px]" style={{ background: "var(--surface)", border: "0.5px solid var(--border)" }}>
+                  <div key={problem} className="p-5 rounded-[14px]" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
                     <p className="text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>{problem}</p>
                   </div>
                 ))}
@@ -101,7 +101,7 @@ export default async function IndustryPage({
               </h2>
               <div className="space-y-3">
                 {industry.opportunities.map((opportunity) => (
-                  <div key={opportunity} className="p-5 rounded-[14px]" style={{ background: "var(--surface)", border: "0.5px solid var(--border)" }}>
+                  <div key={opportunity} className="p-5 rounded-[14px]" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
                     <p className="text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>{opportunity}</p>
                   </div>
                 ))}
@@ -128,7 +128,7 @@ export default async function IndustryPage({
                   key={solution.slug}
                   href={`/solutions/${solution.slug}`}
                   className="p-6 rounded-[14px] no-underline card-hover"
-                  style={{ background: "var(--bg)", border: "0.5px solid var(--border)" }}
+                  style={{ background: "var(--bg)", border: "1px solid var(--border)" }}
                 >
                   <p className="text-xs uppercase tracking-[0.1em] mb-3" style={{ color: "var(--accent)" }}>
                     {solution.eyebrow}
@@ -147,16 +147,16 @@ export default async function IndustryPage({
 
         <section className="py-20" style={{ background: "#070D1E" }}>
           <div className="max-w-4xl mx-auto px-6 sm:px-10 text-center">
-            <p className="text-xs uppercase tracking-[0.14em] mb-4" style={{ color: "#38BDF8" }}>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] mb-4" style={{ color: "#7DD3FC" }}>
               Free technology assessment
             </p>
-            <h2 className="font-display font-bold text-3xl sm:text-5xl mb-5" style={{ color: "#fff" }}>
+            <h2 className="font-display font-bold text-3xl sm:text-5xl mb-5" style={{ color: "#ffffff" }}>
               Show us the workflow that is slowing your team down.
             </h2>
-            <p className="text-base leading-relaxed mb-8 max-w-2xl mx-auto" style={{ color: "rgba(255,255,255,0.62)" }}>
+            <p className="text-base leading-relaxed mb-8 max-w-2xl mx-auto" style={{ color: "rgba(255,255,255,0.76)" }}>
               We will identify the most practical next step before recommending software, automation or AI.
             </p>
-            <Link href="/assessment" className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium no-underline" style={{ background: "#fff", color: "#06102B" }}>
+            <Link href="/assessment" className="inline-flex min-h-11 items-center justify-center rounded-full px-6 py-3 text-sm font-semibold no-underline" style={{ background: "#ffffff", color: "#06102B" }}>
               Start the assessment
             </Link>
           </div>

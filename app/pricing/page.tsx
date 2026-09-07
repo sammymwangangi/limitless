@@ -48,7 +48,7 @@ export default function PricingPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="pt-36 pb-20" style={{ background: "var(--surface)" }}>
           <div className="max-w-6xl mx-auto px-6 sm:px-10">
             <div className="max-w-4xl">
@@ -74,7 +74,7 @@ export default function PricingPage() {
                   key={solution.slug}
                   href={`/solutions/${solution.slug}`}
                   className="p-6 rounded-[14px] no-underline card-hover"
-                  style={{ background: "var(--surface)", border: "0.5px solid var(--border)" }}
+                  style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
                 >
                   <p className="text-xs uppercase tracking-[0.1em] mb-3" style={{ color: "var(--accent)" }}>{solution.eyebrow}</p>
                   <h2 className="font-display font-bold text-lg mb-3" style={{ color: "var(--ink)" }}>{solution.title}</h2>
@@ -138,7 +138,7 @@ export default function PricingPage() {
               ["How do payments work?", "Smaller projects normally use a deposit and final payment. Larger projects use agreed milestones. Recurring services are paid in advance."],
               ["What is billed separately?", "Third-party costs such as domains, cloud hosting, AI usage, WhatsApp, SMS, payment-provider fees, licences and advertising spend unless explicitly included."],
             ].map(([title, text]) => (
-              <div key={title} className="p-7 rounded-[14px]" style={{ background: "var(--surface)", border: "0.5px solid var(--border)" }}>
+              <div key={title} className="p-7 rounded-[14px]" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
                 <h3 className="font-display font-bold text-lg mb-3" style={{ color: "var(--ink)" }}>{title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>{text}</p>
               </div>
@@ -149,10 +149,10 @@ export default function PricingPage() {
         <section className="py-20" style={{ background: "#070D1E" }}>
           <div className="max-w-4xl mx-auto px-6 sm:px-10 text-center">
             <h2 className="font-display font-bold text-3xl sm:text-5xl mb-5" style={{ color: "#fff" }}>Not sure where to start?</h2>
-            <p className="text-base mb-8" style={{ color: "rgba(255,255,255,0.62)" }}>
+            <p className="text-base mb-8" style={{ color: "rgba(255,255,255,0.76)" }}>
               Tell us what is happening in the business and we will identify the most sensible first step.
             </p>
-            <Link href="/assessment" className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium no-underline" style={{ background: "#fff", color: "#06102B" }}>
+            <Link href="/assessment" className="inline-flex min-h-11 items-center justify-center rounded-full px-6 py-3 text-sm font-semibold no-underline" style={{ background: "#fff", color: "#06102B" }}>
               Get a free assessment
             </Link>
           </div>

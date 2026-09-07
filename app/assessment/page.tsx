@@ -14,7 +14,7 @@ export default function AssessmentPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-16">
+      <main id="main-content" tabIndex={-1} className="pt-16">
         <Contact />
       </main>
       <Footer />

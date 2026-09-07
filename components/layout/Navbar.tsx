@@ -23,16 +23,26 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
   return (
     <nav
+      aria-label="Primary navigation"
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={
         scrolled
           ? {
-              background: "rgba(var(--bg-raw) / 0.92)",
+              background: "rgba(var(--bg-raw) / 0.96)",
               backdropFilter: "blur(16px)",
               WebkitBackdropFilter: "blur(16px)",
-              borderBottom: "0.5px solid var(--border)",
+              borderBottom: "1px solid var(--border)",
             }
           : { background: "transparent" }
       }
@@ -43,6 +53,7 @@ export default function Navbar() {
             href="/"
             className="flex items-center gap-2.5 font-display font-bold text-[0.95rem] no-underline group"
             style={{ color: "var(--ink)" }}
+            aria-label="Limitless Softwares home"
           >
             <Logo size={28} className="transition-transform group-hover:scale-105" />
             <span>Limitless Softwares</span>
@@ -53,7 +64,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="px-3 py-1.5 rounded-lg text-sm transition-colors no-underline"
+                className="px-3 py-2 rounded-lg text-sm transition-colors no-underline"
                 style={{ color: "var(--ink-muted)" }}
               >
                 {link.label}
@@ -71,20 +82,22 @@ export default function Navbar() {
           <div className="xl:hidden flex items-center gap-2">
             <ThemeToggle />
             <button
+              type="button"
               onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={isOpen}
-              className="p-2 rounded-lg transition-colors"
-              style={{ color: "var(--ink-muted)" }}
+              aria-controls="mobile-navigation"
+              className="min-w-11 min-h-11 flex items-center justify-center rounded-lg transition-colors"
+              style={{ color: "var(--ink-muted)", background: "transparent" }}
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
             </button>
           </div>
         </div>
       </div>
 
       {isOpen && (
-        <div style={{ background: "var(--surface)", borderBottom: "0.5px solid var(--border)" }}>
+        <div id="mobile-navigation" style={{ background: "var(--surface)", borderBottom: "1px solid var(--border)" }}>
           <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <a

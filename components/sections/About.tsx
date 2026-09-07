@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
-const stats = [
-  { value: "200+", label: "Projects delivered" },
-  { value: "5+", label: "Industries served" },
-  { value: "6", label: "Countries with clients" },
-  { value: "100%", label: "Client retention rate" },
+const proofPoints = [
+  { value: "Kenya", label: "Nairobi-based engineering partner" },
+  { value: "BRS", label: "Registered Kenyan business" },
+  { value: "M-PESA", label: "Local payment integration capability" },
+  { value: "Web + Mobile", label: "Multi-platform product delivery" },
 ];
 
 export default function About() {
@@ -14,7 +15,6 @@ export default function About() {
     <section id="about" className="py-24" style={{ background: "var(--surface)" }}>
       <div className="max-w-6xl mx-auto px-6 sm:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
-          {/* Left */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -31,46 +31,45 @@ export default function About() {
                 color: "var(--ink)",
               }}
             >
-              A boutique software firm that delivers.
+              A boutique software firm built around practical outcomes.
             </h2>
             <p
               className="text-base font-light leading-relaxed mb-8"
-              style={{ color: "var(--ink-muted)", maxWidth: "480px" }}
+              style={{ color: "var(--ink-muted)", maxWidth: "520px" }}
             >
-              We work with startups, SMEs, and enterprises across Africa and
-              beyond — building the systems they actually need, not what&rsquo;s
-              easiest to sell.
+              We build for startups, SMEs and established organisations —
+              combining product engineering, automation, local payments and
+              integrations around the way each business actually operates.
             </p>
 
-            {/* Stats grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((stat) => (
+            <div className="grid grid-cols-2 gap-4" aria-label="Company proof points">
+              {proofPoints.map((point) => (
                 <div
-                  key={stat.label}
+                  key={point.label}
                   className="p-5 rounded-[14px]"
                   style={{
                     background: "var(--bg)",
-                    border: "0.5px solid var(--border)",
+                    border: "1px solid var(--border)",
                   }}
                 >
                   <div
-                    className="font-display font-extrabold text-[2.25rem] leading-none mb-1"
+                    className="font-display font-extrabold text-2xl sm:text-[2rem] leading-none mb-2"
                     style={{ color: "var(--ink)", letterSpacing: "-0.03em" }}
                   >
-                    {stat.value}
+                    {point.value}
                   </div>
-                  <div
-                    className="text-xs font-medium"
-                    style={{ color: "var(--ink-muted)" }}
-                  >
-                    {stat.label}
+                  <div className="text-xs font-medium leading-relaxed" style={{ color: "var(--ink-muted)" }}>
+                    {point.label}
                   </div>
                 </div>
               ))}
             </div>
+
+            <a href="/work" className="inline-flex items-center gap-2 mt-7 text-sm font-semibold underline underline-offset-4" style={{ color: "var(--accent)" }}>
+              View selected work <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </a>
           </motion.div>
 
-          {/* Right: accent box */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -78,14 +77,14 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="rounded-[14px] p-10 relative overflow-hidden"
             style={{
-              background: "linear-gradient(135deg, #071E54 0%, #0D62FE 60%, #0099FF 100%)",
+              background: "linear-gradient(135deg, #071E54 0%, #0D62FE 60%, #006FB8 100%)",
               color: "#ffffff",
               boxShadow: "0 20px 50px rgba(13, 98, 254, 0.2)",
             }}
           >
-            {/* Decorative circles */}
             <div
               className="absolute rounded-full pointer-events-none"
+              aria-hidden="true"
               style={{
                 bottom: "-60px",
                 right: "-60px",
@@ -97,6 +96,7 @@ export default function About() {
             />
             <div
               className="absolute rounded-full pointer-events-none"
+              aria-hidden="true"
               style={{
                 top: "-40px",
                 right: "60px",
@@ -106,37 +106,25 @@ export default function About() {
               }}
             />
 
-            <p
-              className="font-display font-bold text-2xl leading-snug mb-6 relative z-10"
-              style={{ lineHeight: 1.3 }}
-            >
+            <p className="font-display font-bold text-2xl leading-snug mb-6 relative z-10" style={{ lineHeight: 1.3 }}>
               &ldquo;We don&rsquo;t just write code. We solve problems that
               happen to require code.&rdquo;
             </p>
-            <p
-              className="text-sm font-light leading-relaxed relative z-10"
-              style={{ opacity: 0.8 }}
-            >
+            <p className="text-sm font-light leading-relaxed relative z-10" style={{ color: "rgba(255,255,255,0.9)" }}>
               Every engagement starts with understanding your business — the
-              workflows, the pain points, the goals. We design systems that fit
-              you, build them to last, and support you beyond launch.
+              workflows, the pain points and the goals. We design systems that
+              fit the operation, build them to last and support them beyond launch.
             </p>
-            <p
-              className="text-sm font-light leading-relaxed relative z-10 mt-4"
-              style={{ opacity: 0.7 }}
-            >
-              Registered with the Business Registration Service (BRS) under
-              Kenyan law. Compliant, accountable, built for long-term
-              partnerships.
+            <p className="text-sm font-light leading-relaxed relative z-10 mt-4" style={{ color: "rgba(255,255,255,0.86)" }}>
+              Limitless Software Solutions is registered with Kenya&apos;s
+              Business Registration Service under registration number
+              BN-AYSMPR9Y and operates from Nairobi, Kenya.
             </p>
             <span
-              className="inline-flex items-center gap-2 mt-6 px-4 py-1.5 rounded-full text-xs font-medium relative z-10"
-              style={{ background: "rgba(255,255,255,0.12)" }}
+              className="inline-flex items-center gap-2 mt-6 px-4 py-2 rounded-full text-xs font-medium relative z-10"
+              style={{ background: "rgba(255,255,255,0.14)", color: "#ffffff" }}
             >
-              <span
-                className="w-1.5 h-1.5 rounded-full inline-block flex-shrink-0"
-                style={{ background: "#4ade80" }}
-              />
+              <span className="w-2 h-2 rounded-full inline-block flex-shrink-0" aria-hidden="true" style={{ background: "#86EFAC" }} />
               Available for new projects
             </span>
           </motion.div>

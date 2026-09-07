@@ -47,20 +47,11 @@ export default function Process() {
         >
           Our process
         </h2>
-        <p
-          className="text-base font-light leading-relaxed mb-14"
-          style={{ color: "var(--ink-muted)", maxWidth: "520px" }}
-        >
-          A structured approach that keeps projects on track and clients
-          informed at every step.
+        <p className="text-base font-light leading-relaxed mb-14" style={{ color: "var(--ink-muted)", maxWidth: "520px" }}>
+          A structured approach that keeps projects on track and clients informed at every step.
         </p>
 
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           {steps.map((step, i) => (
             <motion.div
               key={step.num}
@@ -69,33 +60,27 @@ export default function Process() {
               style={{
                 gridTemplateColumns: "80px 1fr",
                 gap: "2rem",
-                borderBottom:
-                  i < steps.length - 1 ? "0.5px solid var(--border)" : "none",
+                borderBottom: i < steps.length - 1 ? "1px solid var(--border)" : "none",
                 alignItems: "start",
               }}
             >
               <span
                 className="font-display font-extrabold leading-none"
+                aria-label={`Step ${i + 1}`}
                 style={{
                   fontSize: "3.5rem",
                   letterSpacing: "-0.04em",
-                  color: "var(--border-strong)",
+                  color: "var(--ink-faint)",
                   paddingTop: "0.2rem",
                 }}
               >
                 {step.num}
               </span>
               <div>
-                <h3
-                  className="font-display font-bold text-xl mb-2"
-                  style={{ color: "var(--ink)" }}
-                >
+                <h3 className="font-display font-bold text-xl mb-2" style={{ color: "var(--ink)" }}>
                   {step.title}
                 </h3>
-                <p
-                  className="text-sm leading-relaxed font-light"
-                  style={{ color: "var(--ink-muted)" }}
-                >
+                <p className="text-sm leading-relaxed font-light" style={{ color: "var(--ink-muted)" }}>
                   {step.desc}
                 </p>
               </div>

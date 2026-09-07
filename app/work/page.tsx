@@ -53,7 +53,7 @@ export default function WorkPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="pt-36 pb-20" style={{ background: "var(--surface)" }}>
           <div className="max-w-6xl mx-auto px-6 sm:px-10">
             <div className="max-w-4xl">
@@ -71,13 +71,13 @@ export default function WorkPage() {
         <section className="py-20" style={{ background: "var(--bg)" }}>
           <div className="max-w-6xl mx-auto px-6 sm:px-10 grid lg:grid-cols-2 gap-5">
             {work.map((item) => (
-              <article key={item.title} className="p-7 sm:p-8 rounded-[16px]" style={{ background: "var(--surface)", border: "0.5px solid var(--border)" }}>
+              <article key={item.title} className="p-7 sm:p-8 rounded-[16px]" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
                 <p className="text-xs uppercase tracking-[0.12em] font-medium mb-3" style={{ color: "var(--accent)" }}>{item.category}</p>
                 <h2 className="font-display font-bold text-2xl mb-4" style={{ color: "var(--ink)" }}>{item.title}</h2>
                 <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--ink-muted)" }}>{item.problem}</p>
                 <div className="flex flex-wrap gap-2">
                   {item.built.map((capability) => (
-                    <span key={capability} className="text-xs rounded-full px-3 py-1.5" style={{ color: "var(--ink-muted)", border: "0.5px solid var(--border-strong)" }}>
+                    <span key={capability} className="text-xs rounded-full px-3 py-1.5" style={{ color: "var(--ink-muted)", border: "1px solid var(--border-strong)" }}>
                       {capability}
                     </span>
                   ))}

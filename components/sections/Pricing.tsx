@@ -33,7 +33,7 @@ export default function Pricing() {
             <p className="text-sm leading-relaxed mb-3" style={{ color: "var(--ink-muted)" }}>
               These are starting prices for well-defined engagements. Complex projects are scoped after discovery.
             </p>
-            <a href="/pricing" className="text-sm font-medium no-underline" style={{ color: "var(--accent)" }}>
+            <a href="/pricing" className="text-sm font-semibold underline underline-offset-4" style={{ color: "var(--accent)" }}>
               View full pricing →
             </a>
           </div>
@@ -52,7 +52,7 @@ export default function Pricing() {
               href={`/solutions/${offer.slug}`}
               variants={staggerItem}
               className="p-6 rounded-[14px] card-hover no-underline"
-              style={{ background: "var(--bg)", border: "0.5px solid var(--border)" }}
+              style={{ background: "var(--bg)", border: "1px solid var(--border)" }}
             >
               <h3 className="font-display font-bold text-base mb-2" style={{ color: "var(--ink)" }}>{offer.name}</h3>
               <p className="text-sm font-medium mb-3" style={{ color: "var(--accent)" }}>{offer.price}</p>
@@ -61,13 +61,13 @@ export default function Pricing() {
           ))}
         </motion.div>
 
-        <div className="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 rounded-[16px] p-7" style={{ background: "var(--ink)", color: "var(--bg)" }}>
+        <div className="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 rounded-[16px] p-7" style={{ background: "#070D1E", color: "#ffffff" }}>
           <div>
-            <p className="font-display font-bold text-xl mb-1" style={{ color: "#fff" }}>Not sure which solution fits?</p>
-            <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>We will assess the problem first and recommend the smallest sensible solution.</p>
+            <p className="font-display font-bold text-xl mb-1" style={{ color: "#ffffff" }}>Not sure which solution fits?</p>
+            <p className="text-sm" style={{ color: "rgba(255,255,255,0.76)" }}>We will assess the problem first and recommend the smallest sensible solution.</p>
           </div>
-          <a href="/assessment" className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium no-underline whitespace-nowrap" style={{ background: "#fff", color: "#06102B" }}>
-            Get a free assessment <ArrowRight className="w-4 h-4" />
+          <a href="/assessment" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold no-underline whitespace-nowrap" style={{ background: "#ffffff", color: "#06102B" }}>
+            Get a free assessment <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </a>
         </div>
       </div>
