@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
 import ThemeToggle from "@/components/ThemeToggle";
+import Logo from "@/components/Logo";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -47,7 +47,7 @@ export default function Navbar() {
       style={
         scrolled
           ? {
-              background: "rgba(var(--bg-raw, 245 244 240) / 0.92)",
+              background: "rgba(var(--bg-raw) / 0.92)",
               backdropFilter: "blur(16px)",
               WebkitBackdropFilter: "blur(16px)",
               borderBottom: "0.5px solid var(--border)",
@@ -68,14 +68,11 @@ export default function Navbar() {
             {/* Logo */}
             <a
               href="#top"
-              className="flex items-center gap-2 font-display font-bold text-[0.95rem] no-underline"
+              className="flex items-center gap-2.5 font-display font-bold text-[0.95rem] no-underline group"
               style={{ color: "var(--ink)" }}
             >
-              <span
-                className="w-2 h-2 rounded-full inline-block flex-shrink-0"
-                style={{ background: "var(--accent)" }}
-              />
-              Limitless Software Solutions
+              <Logo size={28} className="transition-transform group-hover:scale-105" />
+              <span>Limitless Software Solutions</span>
             </a>
 
             {/* Desktop nav */}

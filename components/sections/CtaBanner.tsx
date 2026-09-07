@@ -6,13 +6,13 @@ import { fadeInUp } from "@/lib/motion";
 
 export default function CtaBanner() {
   return (
-    <section className="py-24 bg-[#0f1a2e] relative overflow-hidden">
+    <section className="py-24 bg-[#070D1E] relative overflow-hidden">
       {/* Background glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(37,99,235,0.12) 0%, transparent 70%)",
+            "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(13,98,254,0.18) 0%, transparent 70%)",
         }}
       />
 
@@ -23,7 +23,7 @@ export default function CtaBanner() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2563eb]/10 border border-[#2563eb]/30 text-[#3b82f6] text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0D62FE]/10 border border-[#0D62FE]/30 text-[#38BDF8] text-sm font-medium mb-6">
             <Zap className="w-4 h-4" />
             Ready to get started?
           </div>
@@ -40,7 +40,7 @@ export default function CtaBanner() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:shadow-blue-500/25 text-base"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0D62FE] hover:bg-[#094ec2] text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:shadow-blue-500/25 text-base"
             >
               Get a Free Consultation
               <ArrowRight className="w-5 h-5" />

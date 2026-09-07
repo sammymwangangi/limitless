@@ -15,7 +15,7 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="py-24 bg-[#0f1a2e]">
+    <section id="why-us" className="py-24 bg-[#070D1E]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Visual */}
@@ -26,18 +26,18 @@ export default function WhyUs() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="rounded-3xl bg-[#0a1628] border border-[#1e293b] p-8 relative overflow-hidden">
+            <div className="rounded-3xl bg-[#0C152B] border border-[#1e293b] p-8 relative overflow-hidden">
               {/* Background glow */}
               <div
                 className="absolute top-0 right-0 w-64 h-64 pointer-events-none"
                 style={{
-                  background: "radial-gradient(circle, #2563eb 0%, transparent 70%)",
-                  opacity: 0.08,
+                  background: "radial-gradient(circle, #0D62FE 0%, transparent 70%)",
+                  opacity: 0.12,
                   filter: "blur(30px)",
                 }}
               />
               <div className="relative">
-                <div className="text-6xl font-black text-[#2563eb] mb-2">100%</div>
+                <div className="text-6xl font-black text-[#0D62FE] mb-2">100%</div>
                 <div className="text-white font-semibold text-xl mb-1">Custom Solutions</div>
                 <div className="text-[#64748b] text-sm mb-8">No templates. No shortcuts. Built for your business.</div>
 
@@ -50,9 +50,9 @@ export default function WhyUs() {
                   ].map((stat) => (
                     <div
                       key={stat.label}
-                      className="p-4 rounded-xl bg-[#0f1a2e] border border-[#1e293b] text-center"
+                      className="p-4 rounded-xl bg-[#070D1E] border border-[#1e293b] text-center"
                     >
-                      <div className="text-2xl font-bold text-[#3b82f6] mb-1">{stat.value}</div>
+                      <div className="text-2xl font-bold text-[#38BDF8] mb-1">{stat.value}</div>
                       <div className="text-[#64748b] text-xs">{stat.label}</div>
                     </div>
                   ))}
@@ -68,7 +68,7 @@ export default function WhyUs() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            <motion.p variants={staggerItem} className="text-[#3b82f6] font-semibold text-sm uppercase tracking-widest mb-4">
+            <motion.p variants={staggerItem} className="text-[#38BDF8] font-semibold text-sm uppercase tracking-widest mb-4">
               Why Choose Us
             </motion.p>
             <motion.h2
@@ -84,8 +84,8 @@ export default function WhyUs() {
                   variants={staggerItem}
                   className="flex items-start gap-4"
                 >
-                  <div className="w-6 h-6 rounded-full bg-[#2563eb]/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#3b82f6]" />
+                  <div className="w-6 h-6 rounded-full bg-[#0D62FE]/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#38BDF8]" />
                   </div>
                   <span className="text-[#94a3b8] text-base leading-relaxed">{reason}</span>
                 </motion.li>

@@ -77,7 +77,11 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="rounded-[14px] p-10 relative overflow-hidden"
-            style={{ background: "var(--accent)", color: "#ffffff" }}
+            style={{
+              background: "linear-gradient(135deg, #071E54 0%, #0D62FE 60%, #0099FF 100%)",
+              color: "#ffffff",
+              boxShadow: "0 20px 50px rgba(13, 98, 254, 0.2)",
+            }}
           >
             {/* Decorative circles */}
             <div
@@ -85,9 +89,10 @@ export default function About() {
               style={{
                 bottom: "-60px",
                 right: "-60px",
-                width: "200px",
-                height: "200px",
-                background: "rgba(255,255,255,0.07)",
+                width: "220px",
+                height: "220px",
+                background:
+                  "radial-gradient(circle, rgba(0, 210, 255, 0.25) 0%, rgba(255,255,255,0.05) 60%, transparent 80%)",
               }}
             />
             <div
@@ -95,9 +100,9 @@ export default function About() {
               style={{
                 top: "-40px",
                 right: "60px",
-                width: "100px",
-                height: "100px",
-                background: "rgba(255,255,255,0.05)",
+                width: "120px",
+                height: "120px",
+                background: "rgba(255,255,255,0.08)",
               }}
             />
 

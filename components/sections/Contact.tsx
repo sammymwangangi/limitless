@@ -88,15 +88,29 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24"
-      style={{ background: "#0D0D0D", color: "#ffffff" }}
+      className="py-24 relative overflow-hidden"
+      style={{ background: "#070D1E", color: "#ffffff" }}
     >
-      <div className="max-w-6xl mx-auto px-6 sm:px-10">
+      {/* Background glow matching brand aesthetic */}
+      <div
+        className="absolute pointer-events-none rounded-full"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(13, 98, 254, 0.15) 0%, rgba(0, 210, 255, 0.05) 50%, transparent 70%)",
+          top: "10%",
+          right: "-15%",
+          width: "600px",
+          height: "600px",
+          zIndex: 0,
+        }}
+      />
+
+      <div className="max-w-6xl mx-auto px-6 sm:px-10 relative z-10">
         {/* Header */}
         <div className="max-w-xl mb-14">
           <p
             className="section-tag mb-4"
-            style={{ color: "rgba(255,255,255,0.45)" }}
+            style={{ color: "var(--accent-light)" }}
           >
             Get in touch
           </p>
@@ -294,11 +308,11 @@ export default function Contact() {
                       style={{ ...inputStyle, appearance: "none" }}
                       {...register("service")}
                     >
-                      <option value="" style={{ background: "#0D0D0D" }}>
+                      <option value="" style={{ background: "#070D1E" }}>
                         Select a service...
                       </option>
                       {serviceOptions.map((s) => (
-                        <option key={s} value={s} style={{ background: "#0D0D0D" }}>
+                        <option key={s} value={s} style={{ background: "#070D1E" }}>
                           {s}
                         </option>
                       ))}
@@ -336,6 +350,7 @@ export default function Contact() {
                     padding: "0.8rem 1.75rem",
                     background: "var(--accent)",
                     color: "#ffffff",
+                    boxShadow: "0 4px 20px rgba(13, 98, 254, 0.35)",
                     opacity: status === "submitting" ? 0.6 : 1,
                     cursor: status === "submitting" ? "not-allowed" : "pointer",
                   }}

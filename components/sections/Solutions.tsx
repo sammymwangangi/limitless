@@ -51,7 +51,7 @@ const solutions = [
 
 export default function Solutions() {
   return (
-    <section id="solutions" className="py-24 bg-[#0f1a2e]">
+    <section id="solutions" className="py-24 bg-[#070D1E]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -60,7 +60,7 @@ export default function Solutions() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <p className="text-[#3b82f6] font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-[#38BDF8] font-semibold text-sm uppercase tracking-widest mb-4">
             Tailored Solutions
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5">
@@ -82,13 +82,13 @@ export default function Solutions() {
             <motion.div
               key={sol.title}
               variants={staggerItem}
-              className="group p-7 rounded-2xl bg-[#0a1628] border border-[#1e293b] card-hover"
+              className="group p-7 rounded-2xl bg-[#0C152B] border border-[#1e293b] card-hover"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-[#2563eb]/10 flex items-center justify-center group-hover:bg-[#2563eb]/20 transition-colors">
-                  <sol.icon className="w-5 h-5 text-[#3b82f6]" />
+                <div className="w-10 h-10 rounded-xl bg-[#0D62FE]/10 flex items-center justify-center group-hover:bg-[#0D62FE]/20 transition-colors">
+                  <sol.icon className="w-5 h-5 text-[#38BDF8]" />
                 </div>
-                <span className="text-[#3b82f6] text-xs font-semibold uppercase tracking-widest">
+                <span className="text-[#38BDF8] text-xs font-semibold uppercase tracking-widest">
                   {sol.label}
                 </span>
               </div>
@@ -98,7 +98,7 @@ export default function Solutions() {
                 {sol.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 rounded-full bg-[#2563eb]/10 text-[#3b82f6] text-xs font-medium border border-[#2563eb]/20"
+                    className="px-3 py-1 rounded-full bg-[#0D62FE]/10 text-[#38BDF8] text-xs font-medium border border-[#0D62FE]/20"
                   >
                     {tag}
                   </span>

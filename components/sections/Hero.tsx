@@ -9,15 +9,28 @@ export default function Hero() {
       className="min-h-screen flex flex-col justify-end relative overflow-hidden"
       style={{ background: "var(--surface)" }}
     >
-      {/* Decorative circle */}
+      {/* Decorative ambient tech glow */}
       <div
         className="absolute pointer-events-none rounded-full"
         style={{
-          background: "var(--accent-pale)",
-          top: "-200px",
-          right: "-200px",
-          width: "700px",
-          height: "700px",
+          background:
+            "radial-gradient(circle, rgba(0, 210, 255, 0.14) 0%, rgba(13, 98, 254, 0.08) 45%, transparent 70%)",
+          top: "-180px",
+          right: "-180px",
+          width: "750px",
+          height: "750px",
+          zIndex: 0,
+        }}
+      />
+      <div
+        className="absolute pointer-events-none rounded-full"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(13, 98, 254, 0.06) 0%, transparent 70%)",
+          bottom: "-100px",
+          left: "-100px",
+          width: "500px",
+          height: "500px",
           zIndex: 0,
         }}
       />
@@ -50,7 +63,7 @@ export default function Hero() {
           Software
           <br />
           built to{" "}
-          <em style={{ fontStyle: "normal", color: "var(--accent)" }}>scale.</em>
+          <span className="gradient-text font-extrabold not-italic">scale.</span>
         </motion.h1>
 
         {/* Bottom row */}
