@@ -1,15 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, GraduationCap, Hotel, ShoppingBag, BriefcaseBusiness } from "lucide-react";
+import { Building2, GraduationCap, Hotel, ShoppingBag, BriefcaseBusiness, ArrowRight } from "lucide-react";
 import { staggerContainer, staggerItem } from "@/lib/motion";
 
 const industries = [
-  { icon: Building2, name: "Real Estate", text: "Lead qualification, property enquiries, CRM, follow-up and sales dashboards." },
-  { icon: GraduationCap, name: "Education & Training", text: "Course enquiries, admissions, applications, payments and learner communication." },
-  { icon: ShoppingBag, name: "E-Commerce & Retail", text: "Online selling, M-PESA, order workflows, customer support and inventory integrations." },
-  { icon: Hotel, name: "Hospitality & Travel", text: "Bookings, availability, quotations, payments and customer communication." },
-  { icon: BriefcaseBusiness, name: "Professional Services", text: "Lead capture, booking, proposals, CRM workflows and client portals." },
+  { icon: Building2, name: "Real Estate", text: "Lead qualification, property enquiries, CRM, follow-up and sales dashboards.", slug: "real-estate" },
+  { icon: GraduationCap, name: "Education & Training", text: "Course enquiries, admissions, applications, payments and learner communication.", slug: "education-training" },
+  { icon: ShoppingBag, name: "E-Commerce & Retail", text: "Online selling, M-PESA, order workflows, customer support and inventory integrations.", slug: "ecommerce-retail" },
+  { icon: Hotel, name: "Hospitality & Travel", text: "Bookings, availability, quotations, payments and customer communication.", slug: "hospitality-travel" },
+  { icon: BriefcaseBusiness, name: "Professional Services", text: "Lead capture, booking, proposals, CRM workflows and client portals.", slug: "professional-services" },
 ];
 
 export default function Industries() {
@@ -28,13 +28,22 @@ export default function Industries() {
 
         <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {industries.map((industry) => (
-            <motion.article key={industry.name} variants={staggerItem} className="p-6 rounded-[14px] card-hover" style={{ background: "var(--surface)", border: "0.5px solid var(--border)" }}>
+            <motion.a
+              key={industry.name}
+              href={`/industries/${industry.slug}`}
+              variants={staggerItem}
+              className="p-6 rounded-[14px] card-hover no-underline flex flex-col"
+              style={{ background: "var(--surface)", border: "0.5px solid var(--border)" }}
+            >
               <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5" style={{ background: "var(--accent-pale)" }}>
                 <industry.icon className="w-5 h-5" style={{ color: "var(--accent)" }} />
               </div>
               <h3 className="font-display font-bold text-base mb-2" style={{ color: "var(--ink)" }}>{industry.name}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>{industry.text}</p>
-            </motion.article>
+              <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--ink-muted)" }}>{industry.text}</p>
+              <span className="mt-auto inline-flex items-center gap-1.5 text-xs font-medium" style={{ color: "var(--accent)" }}>
+                Explore <ArrowRight className="w-3.5 h-3.5" />
+              </span>
+            </motion.a>
           ))}
         </motion.div>
       </div>

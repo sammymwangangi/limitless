@@ -38,6 +38,23 @@ const serviceOptions = [
   "Not sure — advise me",
 ];
 
+const budgetOptions = [
+  "KES 35K–75K",
+  "KES 75K–150K",
+  "KES 150K–300K",
+  "KES 300K–500K",
+  "KES 500K+",
+  "Need guidance",
+];
+
+const timelineOptions = [
+  "As soon as possible",
+  "Within 30 days",
+  "1–3 months",
+  "3–6 months",
+  "Still exploring",
+];
+
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export default function Contact() {
@@ -120,7 +137,7 @@ export default function Contact() {
           ))}
         </motion.div>
 
-        <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="max-w-2xl">
+        <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="max-w-3xl">
           <div className="rounded-[14px] p-8" style={{ background: "rgba(255,255,255,0.04)", border: "0.5px solid rgba(255,255,255,0.1)" }}>
             {status === "success" ? (
               <div className="flex flex-col items-center justify-center py-12 text-center">
@@ -170,6 +187,23 @@ export default function Contact() {
                     <option value="" style={{ background: "#070D1E" }}>Select an outcome...</option>
                     {serviceOptions.map((s) => <option key={s} value={s} style={{ background: "#070D1E" }}>{s}</option>)}
                   </select>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label htmlFor="budget" className="block text-xs font-medium mb-1.5" style={{ color: "rgba(255,255,255,0.55)" }}>Approximate budget</label>
+                    <select id="budget" style={{ ...inputStyle, appearance: "none" }} {...register("budget")}>
+                      <option value="" style={{ background: "#070D1E" }}>Select a range...</option>
+                      {budgetOptions.map((option) => <option key={option} value={option} style={{ background: "#070D1E" }}>{option}</option>)}
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="timeline" className="block text-xs font-medium mb-1.5" style={{ color: "rgba(255,255,255,0.55)" }}>When would you like to start?</label>
+                    <select id="timeline" style={{ ...inputStyle, appearance: "none" }} {...register("timeline")}>
+                      <option value="" style={{ background: "#070D1E" }}>Select a timeline...</option>
+                      {timelineOptions.map((option) => <option key={option} value={option} style={{ background: "#070D1E" }}>{option}</option>)}
+                    </select>
+                  </div>
                 </div>
 
                 <div className="mb-6">
