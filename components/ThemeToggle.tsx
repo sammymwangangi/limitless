@@ -29,11 +29,15 @@ export default function ThemeToggle() {
     localStorage.setItem("theme", next ? "dark" : "light");
   };
 
+  const label = dark ? "Switch to light mode" : "Switch to dark mode";
+
   return (
     <button
+      type="button"
       onClick={toggle}
-      aria-label="Toggle light/dark mode"
-      className="p-2 rounded-full transition-colors"
+      aria-label={label}
+      title={label}
+      className="min-w-11 min-h-11 flex items-center justify-center rounded-full transition-colors"
       style={{
         border: "1px solid var(--border-strong)",
         color: "var(--ink-muted)",
@@ -46,7 +50,7 @@ export default function ThemeToggle() {
         (e.currentTarget as HTMLButtonElement).style.color = "var(--ink-muted)";
       }}
     >
-      {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+      {dark ? <Sun className="w-4 h-4" aria-hidden="true" /> : <Moon className="w-4 h-4" aria-hidden="true" />}
     </button>
   );
 }
