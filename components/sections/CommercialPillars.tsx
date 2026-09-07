@@ -13,7 +13,7 @@ const pillars = [
       "High-converting websites, e-commerce and lead-generation experiences designed around business outcomes, not just aesthetics.",
     items: ["Limitless Launch", "Business Websites", "Limitless Commerce"],
     cta: "Explore growth solutions",
-    href: "#pricing",
+    href: "/solutions/websites",
   },
   {
     icon: Bot,
@@ -22,8 +22,8 @@ const pillars = [
     description:
       "Connect AI, WhatsApp, CRM, payments and workflows so your team can focus on decisions, relationships and growth.",
     items: ["AI Receptionist", "AI Sales Agent", "Business Automation"],
-    cta: "See automation options",
-    href: "#automation",
+    cta: "Explore automation",
+    href: "/solutions/business-automation",
   },
   {
     icon: Code2,
@@ -32,8 +32,8 @@ const pillars = [
     description:
       "Custom software, mobile apps, dashboards, marketplaces and integrations engineered for your specific operating model.",
     items: ["Custom Systems", "Mobile Apps", "M-PESA & APIs"],
-    cta: "Discuss a custom build",
-    href: "#contact",
+    cta: "Explore custom software",
+    href: "/solutions/custom-software",
   },
   {
     icon: ShieldCheck,
@@ -42,8 +42,8 @@ const pillars = [
     description:
       "Monitoring, maintenance, technical leadership and continuous improvement for businesses that need dependable support after launch.",
     items: ["Limitless Care", "Technology Partner", "System Management"],
-    cta: "View ongoing support",
-    href: "#pricing",
+    cta: "Explore technology partnership",
+    href: "/solutions/technology-partner",
   },
 ];
 
