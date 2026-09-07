@@ -6,40 +6,21 @@ import ThemeToggle from "@/components/ThemeToggle";
 import Logo from "@/components/Logo";
 
 const navLinks = [
-  { label: "Solutions", href: "#solutions" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Automation", href: "#automation" },
-  { label: "Industries", href: "#industries" },
-  { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
+  { label: "Solutions", href: "/#solutions" },
+  { label: "Industries", href: "/#industries" },
+  { label: "Work", href: "/work" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Process", href: "/#process" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const ids = navLinks.map((l) => l.href.slice(1));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
-        });
-      },
-      { rootMargin: "-40% 0px -55% 0px" }
-    );
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
   }, []);
 
   return (
@@ -59,7 +40,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 sm:px-10">
         <div className="flex items-center justify-between h-16 lg:h-[72px]">
           <a
-            href="#top"
+            href="/"
             className="flex items-center gap-2.5 font-display font-bold text-[0.95rem] no-underline group"
             style={{ color: "var(--ink)" }}
           >
@@ -73,12 +54,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className="px-3 py-1.5 rounded-lg text-sm transition-colors no-underline"
-                style={{
-                  color:
-                    activeSection === link.href.slice(1)
-                      ? "var(--ink)"
-                      : "var(--ink-muted)",
-                }}
+                style={{ color: "var(--ink-muted)" }}
               >
                 {link.label}
               </a>
@@ -87,7 +63,7 @@ export default function Navbar() {
 
           <div className="hidden xl:flex items-center gap-3">
             <ThemeToggle />
-            <a href="#contact" className="btn-primary text-sm" style={{ padding: "0.5rem 1.25rem" }}>
+            <a href="/assessment" className="btn-primary text-sm" style={{ padding: "0.5rem 1.25rem" }}>
               Free assessment
             </a>
           </div>
@@ -97,6 +73,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
+              aria-expanded={isOpen}
               className="p-2 rounded-lg transition-colors"
               style={{ color: "var(--ink-muted)" }}
             >
@@ -120,7 +97,7 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a href="#contact" onClick={() => setIsOpen(false)} className="btn-primary mt-2 text-center text-sm">
+            <a href="/assessment" onClick={() => setIsOpen(false)} className="btn-primary mt-2 text-center text-sm">
               Get a free assessment
             </a>
           </div>
