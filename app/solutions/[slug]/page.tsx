@@ -47,7 +47,7 @@ export default async function SolutionPage({
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="pt-36 pb-20" style={{ background: "var(--surface)" }}>
           <div className="max-w-6xl mx-auto px-6 sm:px-10">
             <div className="max-w-4xl">
@@ -63,17 +63,14 @@ export default async function SolutionPage({
               >
                 {solution.title}
               </h1>
-              <p
-                className="text-lg sm:text-xl leading-relaxed mb-8 max-w-3xl"
-                style={{ color: "var(--ink-muted)" }}
-              >
+              <p className="text-lg sm:text-xl leading-relaxed mb-8 max-w-3xl" style={{ color: "var(--ink-muted)" }}>
                 {solution.summary}
               </p>
               <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                 <Link href="/assessment" className="btn-primary">
                   Discuss this solution
                 </Link>
-                <span className="text-sm font-medium" style={{ color: "var(--accent)" }}>
+                <span className="text-sm font-semibold" style={{ color: "var(--accent)" }}>
                   {solution.price}
                 </span>
               </div>
@@ -90,11 +87,7 @@ export default async function SolutionPage({
               </h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {solution.outcomes.map((outcome) => (
-                  <div
-                    key={outcome}
-                    className="p-5 rounded-[14px]"
-                    style={{ background: "var(--surface)", border: "0.5px solid var(--border)" }}
-                  >
+                  <div key={outcome} className="p-5 rounded-[14px]" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
                     <p className="text-sm leading-relaxed" style={{ color: "var(--ink-muted)" }}>
                       {outcome}
                     </p>
@@ -104,23 +97,24 @@ export default async function SolutionPage({
             </div>
 
             <aside
+              aria-label="Solution fit and starting investment"
               className="rounded-[18px] p-7 sm:p-8 h-fit"
-              style={{ background: "var(--ink)", color: "#fff" }}
+              style={{ background: "#070D1E", color: "#ffffff" }}
             >
-              <p className="text-xs uppercase tracking-[0.12em] mb-3" style={{ color: "var(--accent-light)" }}>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "#7DD3FC" }}>
                 Best fit
               </p>
-              <p className="text-base leading-relaxed mb-7" style={{ color: "rgba(255,255,255,0.72)" }}>
+              <p className="text-base leading-relaxed mb-7" style={{ color: "rgba(255,255,255,0.78)" }}>
                 {solution.bestFor}
               </p>
-              <p className="text-xs uppercase tracking-[0.12em] mb-3" style={{ color: "var(--accent-light)" }}>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "#7DD3FC" }}>
                 Starting investment
               </p>
               <p className="font-display font-bold text-2xl mb-7">{solution.price}</p>
               <Link
                 href="/assessment"
-                className="inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium no-underline"
-                style={{ background: "#fff", color: "#06102B" }}
+                className="inline-flex min-h-11 items-center justify-center rounded-full px-5 py-3 text-sm font-semibold no-underline"
+                style={{ background: "#ffffff", color: "#06102B" }}
               >
                 Get a free assessment
               </Link>
@@ -138,7 +132,7 @@ export default async function SolutionPage({
               <ul className="space-y-3">
                 {solution.capabilities.map((capability) => (
                   <li key={capability} className="flex gap-3 text-sm" style={{ color: "var(--ink-muted)" }}>
-                    <span style={{ color: "var(--accent)" }}>✓</span>
+                    <span aria-hidden="true" style={{ color: "var(--accent)" }}>✓</span>
                     <span>{capability}</span>
                   </li>
                 ))}
@@ -151,12 +145,8 @@ export default async function SolutionPage({
               </h2>
               <div className="space-y-3">
                 {solution.process.map((step, index) => (
-                  <div
-                    key={step}
-                    className="flex items-center gap-4 p-4 rounded-[12px]"
-                    style={{ background: "var(--bg)", border: "0.5px solid var(--border)" }}
-                  >
-                    <span className="font-display font-bold" style={{ color: "var(--accent)" }}>
+                  <div key={step} className="flex items-center gap-4 p-4 rounded-[12px]" style={{ background: "var(--bg)", border: "1px solid var(--border)" }}>
+                    <span className="font-display font-bold" aria-label={`Step ${index + 1}`} style={{ color: "var(--accent)" }}>
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <span className="text-sm font-medium" style={{ color: "var(--ink)" }}>
@@ -179,7 +169,7 @@ export default async function SolutionPage({
                     Often combined with
                   </h2>
                 </div>
-                <Link href="/#solutions" className="text-sm no-underline" style={{ color: "var(--accent)" }}>
+                <Link href="/#solutions" className="text-sm font-semibold underline underline-offset-4" style={{ color: "var(--accent)" }}>
                   View all solutions
                 </Link>
               </div>
@@ -189,7 +179,7 @@ export default async function SolutionPage({
                     key={item.slug}
                     href={`/solutions/${item.slug}`}
                     className="p-6 rounded-[14px] no-underline card-hover"
-                    style={{ background: "var(--surface)", border: "0.5px solid var(--border)" }}
+                    style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
                   >
                     <p className="text-xs uppercase tracking-[0.1em] mb-3" style={{ color: "var(--accent)" }}>
                       {item.eyebrow}
