@@ -86,6 +86,7 @@ const orgSchema = {
   name: "Limitless Softwares",
   legalName: "Limitless Software Solutions",
   url: siteUrl,
+  logo: `${siteUrl}/brand/limitless-logo.webp`,
   email: "info@limitlesssolutions.co.ke",
   telephone: "+254798489573",
   areaServed: ["KE", "Africa", "worldwide"],
